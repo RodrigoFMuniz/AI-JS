@@ -40,5 +40,17 @@ function feedForward(inputs=[], target=0, epochs=1) {
 	}
 }
 
+// // tangente hiperbólica: retorna valores entre -1 e 1
+// function tanh(n=0) { return Math.sinh(n) / Math.cosh(n); }
+// // função sigmóide: retorna valores entre 0 e 1
+// function sigmoid(n=0) { return 1 / (1 + Math.pow(Math.E, -n)); }
+// // unidade linear retificada (relu): retorna somente valores nulos e positivos
+// function relu(n=0) { return Math.max(n, 0); }
+// // unidade linear retificada com vazamento (leaky relu): retorna somente valores maiores que zero
+// function leakyRelu(n=0) { return Math.max(n, 0.01); }
+// // passo binário: retorna somente 0 ou 1
+// function binaryStep(n=0) { return (n >= 0) ? 1 : 0; }
+
+
 // feedForward([0, 0], 0.9, 1000);
 feedForward([0, 0, 0, 0, 0], 0.9, 1000);
