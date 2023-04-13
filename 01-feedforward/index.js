@@ -6,14 +6,19 @@ function gradientDescent(n=0){
     return n*(1-n)
 }
 
+function generateWeights(inputs){
+    let weights = [];
+	for(let i=0; i<inputs.length; i++) {
+		weights.push(Math.random());
+	}
+    return weights
+}
+
 function feedForward(inputs=[], target=0, epochs=1) {
 	if(target<=0) target = 0.1;
 	else if(target>1) target = 1;
 
-	let weights = [];
-	for(let i=0; i<inputs.length; i++) {
-		weights.push(Math.random());
-	}
+	let weights = generateWeights(inputs)
 
 	for(let i=1; i<=epochs; i++) {
 		let multiply = [];
@@ -35,4 +40,5 @@ function feedForward(inputs=[], target=0, epochs=1) {
 	}
 }
 
-feedForward([0, 0], 0.9, 1000);
+// feedForward([0, 0], 0.9, 1000);
+feedForward([0, 0, 0, 0, 0], 0.9, 1000);
