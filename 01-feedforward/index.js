@@ -3,7 +3,7 @@ function funcSum(arr=[]){
 }
 
 function gradientDescent(n=0){
-    return n(1-n)
+    return n*(1-n)
 }
 
 function feedForward(inputs=[], target=0, epochs=1) {
@@ -34,3 +34,5 @@ function feedForward(inputs=[], target=0, epochs=1) {
 		console.log(`época: ${epoch} - taxa de erro: ${error} - saída: ${output}`);
 	}
 }
+
+feedForward([0, 0], 0.9, 1000);
