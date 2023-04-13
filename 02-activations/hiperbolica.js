@@ -24,6 +24,10 @@ function summatory(inputs, weights){
     return multiply
 }
 
+function calcError(target, output){
+    return parseFloat(Math.abs(target - output)).toFixed(4);
+}
+
 function feedForward(inputs=[], target=0, epochs=1) {
 	if(target<=0) target = 0.1;
 	else if(target>1) target = 1;
@@ -31,12 +35,15 @@ function feedForward(inputs=[], target=0, epochs=1) {
 	let weights = generateWeights(inputs)
 
 	for(let i=1; i<=epochs; i++) {
+        
         let multiply = summatory(inputs, weights)
 
 		let sum = funcSum(multiply);
+
 		let output = parseFloat(Math.tanh(sum)).toFixed(4);
 
-		let error = parseFloat(Math.abs(target - output)).toFixed(4);
+		let error = calcError(target, output)
+
 		for(let j=0; j<inputs.length; j++) {
 			weights[j] += inputs[j] * gradientDescent(error);
 		}
