@@ -54,6 +54,7 @@ function feedForward(inputs=[], target=0, epochs=1, activations) {
 		let error = calcError(target, output)
 
 		for(let j=0; j<inputs.length; j++) {
+            if(inputs[j]<=0) inputs[j] = 0.1;
 			weights[j] += inputs[j] * gradientDescent(error);
 		}
 		let epoch = i.toString().padStart(7, '0');
@@ -75,4 +76,4 @@ function binaryStep(n=0) { return (n >= 0) ? 1 : 0; }
 
 
 // feedForward([0, 0], 0.9, 1000);
-feedForward([0, 0, 0, 0, 0], 0.9, 1000, 'leakyRelu');
+feedForward([0, 0, 0, 0, 0], 0.9, 1000, 'relu');
