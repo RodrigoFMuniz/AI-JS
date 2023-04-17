@@ -35,7 +35,7 @@ function feedForward(inputs=[], target=0, epochs=1) {
 	let weights = generateWeights(inputs)
 
 	for(let i=1; i<=epochs; i++) {
-        
+
         let multiply = summatory(inputs, weights)
 
 		let sum = funcSum(multiply);
@@ -66,4 +66,4 @@ function feedForward(inputs=[], target=0, epochs=1) {
 
 
 // feedForward([0, 0], 0.9, 1000);
-feedForward([0, 0, 0, 0, 0], 0.9, 900);
+feedForward([0, 0, 0, 0, 0], 0.9, 1000);
