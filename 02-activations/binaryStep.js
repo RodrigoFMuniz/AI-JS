@@ -63,7 +63,7 @@ function feedForward(inputs=[], target=0, epochs=1) {
 // // unidade linear retificada com vazamento (leaky relu): retorna somente valores maiores que zero
 // function leakyRelu(n=0) { return Math.max(n, 0.01); }
 // // passo binário: retorna somente 0 ou 1
-function binaryStep(n=0) { return (n >= 0) ? 1 : 0; }
+// function binaryStep(n=0) { return (n >= 0) ? 1 : 0; }
 
 
 // feedForward([0, 0], 0.9, 1000);
